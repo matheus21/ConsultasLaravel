@@ -16,10 +16,13 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => 'app'], function() {
+Route::group(['prefix' => 'pacientes'], function() {
 
-    Route::get('/', function() {
-        return view('pacientes.index');
-    });
+    Route::get('/', 'PacientesController@index');
+    Route::get('/add', 'PacientesController@add');
+    Route::post('/post_add', 'PacientesController@post_add');
+    Route::post('/post_edit', 'PacientesController@post_edit');
+    Route::get('/{id}/edit', 'PacientesController@edit');
 
 });
+
