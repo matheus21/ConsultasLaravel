@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
+Route::get('/', 'PacientesController@index');
 
 
-Route::group(['prefix' => 'pacientes'], function() {
+Route::group(['prefix' => 'pacientes'], function () {
 
     Route::get('/', 'PacientesController@index');
     Route::get('/add', 'PacientesController@add');
