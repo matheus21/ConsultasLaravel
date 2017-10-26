@@ -47,4 +47,19 @@ class PacientesController extends Controller
         $paciente = new Paciente();
         return $paciente->find($id);
     }
+
+    public function delete($id) {
+
+        return view('pacientes.delete', [
+            'paciente' => $this->getPaciente($id)
+        ]);
+
+    }
+
+    public function post_delete($id) {
+
+        $this->getPaciente($id)->delete();
+        return redirect('/pacientes');
+
+    }
 }
