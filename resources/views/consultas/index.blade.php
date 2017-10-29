@@ -25,7 +25,10 @@
                     @foreach($consultas as $consulta)
                         <tr>
                             <td>{{$consulta->paciente->nome}}</td>
-                            <td>{{$consulta->data}}</td>
+                            <?php
+                                $data = new DateTime($consulta->data);
+                            ?>
+                            <td><?= $data->format('d/m/Y'); ?></td>
                             <td>{{$consulta->hora}}</td>
                             <td>{{$consulta->situacao_consulta->nome}}</td>
                             <td><a href="{{url("consultas/$consulta->id/edit")}}" title="Editar"
