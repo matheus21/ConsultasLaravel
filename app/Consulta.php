@@ -17,4 +17,14 @@ class Consulta extends Model
 
     protected $table = 'consultas';
 
+    public function paciente()
+    {
+        return $this->belongsTo(Paciente::class, 'paciente_id');
+    }
+
+    public function situacao_consulta()
+    {
+        return $this->belongsTo(SituacaoConsulta::class, 'situacao_id');
+    }
+
 }

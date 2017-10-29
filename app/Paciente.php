@@ -17,4 +17,9 @@ class Paciente extends Model
     ];
 
     protected $table = 'pacientes';
+
+    public function consultas()
+    {
+        return $this->hasMany(Consulta::class, 'paciente_id');
+    }
 }

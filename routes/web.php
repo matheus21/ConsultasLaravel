@@ -26,3 +26,15 @@ Route::group(['prefix' => 'pacientes'], function () {
 
 });
 
+
+Route::group(['prefix' => 'consultas'], function() {
+
+    Route::get('/{id}', 'ConsultasController@index');
+    Route::get('/{id}/add', 'ConsultasController@add');
+    Route::post('/post_add', 'ConsultasController@post_add');
+    Route::post('/post_edit', 'ConsultasController@post_edit');
+    Route::get('/{id}/edit', 'ConsultasController@edit');
+    Route::get('/{id}/delete', 'ConsultasController@delete');
+    Route::get('/{id}/post_delete', 'ConsultasController@post_delete');
+
+});

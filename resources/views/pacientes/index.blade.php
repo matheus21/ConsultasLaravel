@@ -20,6 +20,7 @@
                         <th>Telefone</th>
                         <th>&nbsp;</th>
                         <th>&nbsp;</th>
+                        <th>&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -37,6 +38,10 @@
                             <td><a href="{{url("pacientes/$paciente->id/delete")}}" title="Excluir"
                                    class="btn btn-danger btn-sm"><span
                                             class="glyphicon glyphicon glyphicon-remove"></span></a>
+                            </td>
+                            <td><a href="{{url("consultas/$paciente->id")}}" title="Consultas"
+                                   class="btn btn-primary btn-sm"><span
+                                            class="glyphicon glyphicon glyphicon-plus"></span></a>
                             </td>
                         </tr>
                     @endforeach

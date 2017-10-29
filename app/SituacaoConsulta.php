@@ -12,4 +12,8 @@ class SituacaoConsulta extends Model
     ];
 
     protected $table = 'situacao_consultas';
+
+    public function consultas() {
+        return $this->hasMany(Consulta::class, 'situacao_id');
+    }
 }
